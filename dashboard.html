@@ -90,7 +90,7 @@
                 <h3 class="logo">LOFI</h3>
                 <!-- start Logout button -->
                 <div>
-                    <button class="btn__primary" onclick="handleLogout()">
+                    <button class="btn__primary" onclick="handleLogout(event)">
                         Logout
                     </button>
                 </div>
@@ -102,9 +102,9 @@
                 <!-- start Dashboard Head -->
                 <div class="dashboard__head">
                     <div class="dashboard__addpost">
-                        <a href="/addpost.html" class="btn__primary">
+                        <button onclick="addpostNavigat(event)" class="btn__primary">
                             Add Post
-                        </a>
+                        </button>
                     </div>
                     <div class="input">
                         <div class="input__field">

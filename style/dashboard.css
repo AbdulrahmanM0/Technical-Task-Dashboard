@@ -29,7 +29,7 @@
     justify-content: space-between;
 }
 
-.dashboard__head a {
+.dashboard__head button {
     font-size: .8rem;
 }
 

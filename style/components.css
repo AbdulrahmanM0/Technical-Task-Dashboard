@@ -234,6 +234,7 @@ input[type="checkbox"]:hover {
     cursor: pointer;
     transition: var(--trans);
     display: inline-block;
+    min-width: 90px;
 }
 
 .btn__primary:hover {
@@ -303,8 +304,6 @@ table th h4 svg.lower {
 table th h4:hover {
     opacity: .7;
 }
-
-table th #id__col {}
 
 /* ---- end table ---- */
 
