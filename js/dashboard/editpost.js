@@ -2,19 +2,12 @@
 function handleEditPost(id) {
     let tr = document.querySelector(`svg[id="${id}"]`).closest("tr");
 
-    let userId = tr.children[0];
     let title = tr.children[1];
     let body = tr.children[2];
     let action = tr.children[3];
 
-    let userVal = userId.innerText;
     let titleVal = title.innerText;
     let bodyVal = body.innerText;
-
-    userId.innerHTML = `
-        
-            <input type="number" value="${userVal}" class="input__control" name="userId" placeholder="Enter ID">
-        `;
 
     title.innerHTML = `
         
@@ -46,7 +39,6 @@ function handleCancelEdit(id) {
     let tr = document.querySelector(`svg[onclick="handleCancelEdit(${id})"]`).closest("tr");
     let post = data.find(item => item.id === id)
 
-    tr.children[0].innerText = post.userId;
     tr.children[1].innerText = post.title;
     tr.children[2].innerText = post.body;
 

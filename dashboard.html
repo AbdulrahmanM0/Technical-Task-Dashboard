@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/style/main.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <title>TOFI</title>
+    <link rel="icon" type="image/png" href="/assets/images/points__shap.webp">
+
+    <title>LOFI</title>
     <script>
         if (!sessionStorage.getItem("auth") && !localStorage.getItem("auth")) {
             window.location.replace("/index.html")
@@ -63,21 +64,6 @@
                             </svg> <span>Add Post</span>
                         </a>
                     </div>
-                    <div>
-                        <a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="lucide lucide-message-square-text-icon lucide-message-square-text">
-                                <path
-                                    d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
-                                <path d="M7 11h10" />
-                                <path d="M7 15h6" />
-                                <path d="M7 7h8" />
-                            </svg>
-                            <span>Chat</span>
-                        </a>
-                    </div>
                 </nav>
 
                 <!-- start theme toggle -->
@@ -85,7 +71,12 @@
                     <div class="input__field">
                         <input type="checkbox" onchange="handleTheme(event)" id="theme__toggle" class="input__control">
                     </div>
-                    <label for="theme__toggle" class="input__label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg></label>
+                    <label for="theme__toggle" class="input__label"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon">
+                            <path
+                                d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+                        </svg></label>
                 </div>
                 <!-- end theme toggle -->
 
@@ -106,18 +97,19 @@
                 <!-- end Logout button -->
             </header>
 
+            <!-- start Dashboard -->
             <section class="dashboard card">
                 <!-- start Dashboard Head -->
                 <div class="dashboard__head">
-                    <!-- <div>
+                    <div class="dashboard__addpost">
                         <a href="/addpost.html" class="btn__primary">
                             Add Post
                         </a>
-                    </div> -->
+                    </div>
                     <div class="input">
                         <div class="input__field">
                             <input type="search" onchange="handleSearch(event)" id="search" class="input__control"
-                                name="search" placeholder="Search by Title & Body">
+                                name="search" placeholder="Search">
                             <svg class="input__search" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round"
@@ -138,7 +130,7 @@
                                 <th id="id__col" onclick="handleSort(event)">
                                     <h4>
                                         #ID
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="lower" width="10" height="10"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-move-down-icon lucide-move-down">
@@ -174,16 +166,15 @@
                 </div>
                 <!-- end Table -->
 
-
                 <!-- start pagination -->
                 <div>
                     <div class="pagination" id="pagination">
-
+                        <!-- Pagination is filled by JS in main.js -->
                     </div>
                 </div>
                 <!-- end pagination -->
-
             </section>
+            <!-- end Dashboard -->
         </div>
 
     </div>

@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/style/main.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <title>TOFI</title>
+    <link rel="icon" type="image/png" href="/assets/images/points__shap.webp">
+
+    <title>LOFI</title>
     <script>
         if (!sessionStorage.getItem("auth") && !localStorage.getItem("auth")) {
             window.location.replace("/index.html")
@@ -63,22 +64,6 @@
                             </svg> <span>Add Post</span>
                         </a>
                     </div>
-                    <div>
-                        <a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="lucide lucide-message-square-text-icon lucide-message-square-text">
-                                <path
-                                    d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
-                                <path d="M7 11h10" />
-                                <path d="M7 15h6" />
-                                <path d="M7 7h8" />
-                            </svg>
-                            <span>Chat</span>
-                        </a>
-                    </div>
-
                 </nav>
                 <!-- start theme toggle -->
                 <div class="input theme">
@@ -112,28 +97,19 @@
 
             <section class="card">
                 <!-- start Add Post -->
-
-                <div class="addpost__col">
-                    <!-- post id -->
-                    <div class="input">
-                        <label for="id" class="input__label"> ID </label>
-                        <div class="input__field">
-                            <input type="number" id="id" class="input__control" name="id" placeholder="Enter post id">
-                        </div>
-                    </div>
-
-                    <!-- post title -->
-                    <div class="input">
-                        <label for="title" class="input__label"> Title <span class="error" id="titleError"> must exceed 3 letters </span> </label>
-                        <div class="input__field">
-                            <input type="text" id="title" class="input__control" name="title"
-                                placeholder="Enter post title">
-                        </div>
+                <!-- post title -->
+                <div class="input">
+                    <label for="title" class="input__label"> Title <span class="error" id="titleError"> must exceed 3
+                            letters </span> </label>
+                    <div class="input__field">
+                        <input type="text" id="title" class="input__control" name="title"
+                            placeholder="Enter post title">
                     </div>
                 </div>
                 <!-- post body -->
                 <div class="input">
-                    <label for="body" class="input__label"> Body <span class="error" id="bodyError">must exceed 10 letters
+                    <label for="body" class="input__label"> Body <span class="error" id="bodyError">must exceed 10
+                            letters
                         </span> </label>
                     <div class="input__field">
                         <textarea type="text" id="body" class="input__control" name="body"
@@ -154,7 +130,6 @@
                 <!-- end Add Post -->
             </section>
         </div>
-
     </div>
     <script src="/js/dashboard/aside.js"></script>
     <script src="/js/dashboard/addpost.js"></script>

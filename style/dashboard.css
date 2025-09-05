@@ -1,4 +1,4 @@
-.root{
+.root {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -6,67 +6,82 @@
 }
 
 /* ---- start dashboard ---- */
-.container{
+.container {
     margin-left: 200px;
     position: relative;
     padding: var(--p-spacing);
     transition: var(--trans);
-    
+
 }
+
 @media (max-width: 700px) {
-    .container{
+    .container {
         margin-left: 70px;
     }
 }
-.container.close{
+
+.container.close {
     margin-left: 70px;
 }
-.dashboard__head{
+
+.dashboard__head {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
-.dashboard input{
+
+.dashboard__head a {
+    font-size: .8rem;
+}
+
+.dashboard input {
     min-width: 100%;
 }
-.dashboard .action{
+
+.dashboard .action {
     cursor: pointer;
 }
 
-.dashboard .action[title=Edit]{
+.dashboard .action[title=Edit] {
     color: var(--text-secondary);
     position: relative;
 }
 
-.dashboard .action[title=Delete]{
-    
+.dashboard .action[title=Delete] {
     color: var(--danger);
     position: relative;
 }
 
-.dashboard .action:hover{
+.dashboard .action:hover {
     opacity: .9;
 }
 
-.addpost__col{
+.addpost__col {
     display: flex;
     gap: var(--p-spacing);
 }
-.addpost__col .input{
+
+.addpost__col .input {
     flex: 1;
 }
 
 @media (max-width: 700px) {
-    .addpost__col{
+    .addpost__col {
         display: block;
     }
+
+    .dashboard__addpost {
+        display: none;
+    }
 }
+
 /* ---- end dashboard ---- */
 
 /* ---- start addpost ---- */
-.addpost__error{
+.addpost__error {
     display: none;
     color: var(--danger);
     font-size: .8rem;
     margin-bottom: 2rem;
 }
+
 /* ---- end addpost ---- */

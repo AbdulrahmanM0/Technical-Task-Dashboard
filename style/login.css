@@ -8,7 +8,7 @@
     overflow: hidden;
 }
 
-.login__container{
+.login__container {
     position: relative;
 
 }
@@ -17,7 +17,7 @@
     padding: 2rem;
 }
 
-.login__container::after{
+.login__container::after {
     content: "";
     background-image: url(../assets/images/points__shap.webp);
     position: absolute;
@@ -27,7 +27,8 @@
     height: 200px;
     z-index: -1;
 }
-.login__container::before{
+
+.login__container::before {
     content: "";
     background-image: url(../assets/images/points__shap.webp);
     position: absolute;
@@ -43,7 +44,7 @@ h3.logo {
     text-align: center;
 }
 
-.login__welcome{
+.login__welcome {
     margin-bottom: 1rem;
 }
 
@@ -58,11 +59,13 @@ h3.logo {
     font-size: 1rem;
 }
 
-.login__remember{
+.login__remember {
     display: flex;
     gap: .5rem;
     margin-bottom: 1rem;
     padding: 5px;
 }
 
-
+#eye-off {
+    display: none;
+}

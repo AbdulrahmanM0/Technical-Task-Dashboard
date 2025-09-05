@@ -58,9 +58,9 @@ function showRows(data = JSON.parse(sessionStorage.getItem("data")), page = 1) {
 
     if (filteredData.length > 0) {
         filteredData.map((item) => {
-            let { title, id, body, userId } = item;
+            let { title, body, id } = item;
             let tr = document.createElement("tr");
-            tr.innerHTML = `<td>${userId}</td><td>${title}</td><td>${body}</td>
+            tr.innerHTML = `<td>${id}</td><td>${title}</td><td>${body}</td>
         <td>
             <svg id=${id} onclick=handleEditPost(${id}) class=action title=Edit xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen-icon lucide-square-pen"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
             <svg id=${id} onclick=handleDeletePost(${id})  class=action title=Delete xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-icon lucide-trash"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
@@ -103,14 +103,14 @@ function handleSort(event) {
 
     if (event.currentTarget.id == "id__col") {
         filteredData = clonedData.sort((a, b) =>
-            arrow.classList.contains("lower") ? a.userId - b.userId : b.userId - a.userId
+            arrow.classList.contains("lower") ? a.id - b.id : b.id - a.id
         );
 
     } else if (event.currentTarget.id == "title__col") {
         filteredData = clonedData.sort((a, b) =>
             arrow.classList.contains("lower")
-                ? a.title.length - b.title.length
-                : b.title.length - a.title.length
+                ? a.title.localeCompare(b.title) 
+                : b.title.localeCompare(a.title) 
         );
     }
 
@@ -130,9 +130,9 @@ function handleSearch(event) {
         return (
             item.title.toLowerCase().trim().includes(query) ||
             // .replace(/\s+/g, ' ') i have searched for this line 
-            item.body.toLowerCase().replace(/\s+/g, ' ').trim().includes(query)
+            item.body.toLowerCase().replace(/\s+/g, ' ').trim().includes(query) ||
 
-            // String(item.userId).includes(event.target.value) 
+            String(item.id).includes(event.target.value)
         )
     })
 
@@ -146,20 +146,14 @@ function handleSavePost(id) {
     let data = JSON.parse(sessionStorage.getItem("data"));
 
     // all values are from "/editpost.js"
-    let newUserId = tr.querySelector('input[name="userId"]');
     let newTitle = tr.querySelector('input[name="title"]');
     let newBody = tr.querySelector('textarea[name="body"]');
 
-    newUserId.classList.remove("input__error")
     newTitle.classList.remove("input__error")
     newBody.classList.remove("input__error")
     titleError.style.display = "none"
     bodyError.style.display = "none"
 
-    if (newUserId.value == "" || newUserId.value < 0) {
-        newUserId.classList.add("input__error")
-        return null
-    }
     if (newTitle.value.length < 3) {
         newTitle.classList.add("input__error")
         titleError.style.display = "block"
@@ -171,14 +165,13 @@ function handleSavePost(id) {
         return null
     }
 
-    tr.children[0].innerText = newUserId.value;
     tr.children[1].innerText = newTitle.value;
     tr.children[2].innerText = newBody.value;
 
     // save the new values in the store first
     let updatedData = data.map(item => {
         if (item.id === id) {
-            return { ...item, userId: Number(newUserId.value), title: newTitle.value, body: newBody.value }
+            return { ...item, title: newTitle.value, body: newBody.value }
         }
         return item
     })
