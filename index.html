@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>TOFI</title>
+    <script>
+        if (sessionStorage.getItem("auth") || localStorage.getItem("auth")) {
+            window.location.replace("/dashboard.html")
+        }
+    </script>
+</head>
+
+<body>
+    <section class="login">
+        <div class="login__container">
+            <div class="card">
+                <h3 class="logo">LOFI</h3>
+
+                <div class="login__welcome">
+                    <h3>Welcome to LOFI</h3>
+                    <p>Please sign-in to your account and start the adventure</p>
+                </div>
+
+                <div class="login__form">
+                    <form onsubmit="handleSubmit(event)">
+                        <!-- email -->
+                        <div class="input">
+                            <label for="email" class="input__label">Email <span class="error" id="emailError">Invalid
+                                    email</span></label>
+                            <div class="input__field">
+                                <input type="email" id="email" class="input__control" name="email"
+                                    placeholder="Enter your email">
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <div class="input">
+                            <label for="password" class="input__label">Password <span class="error"
+                                    id="passwordError">Invalid password </span></label>
+
+                            <div class="input__field">
+                                <input type="password" id="password" class="input__control" name="password"
+                                    placeholder="Enter your password">
+
+                                <!-- hid password -->
+                                <!-- <svg class="input__toggle" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-eye-off-icon lucide-eye-off">
+                                    <path
+                                        d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" />
+                                    <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
+                                    <path
+                                        d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
+                                    <path d="m2 2 20 20" />
+                                </svg> -->
+                                <!-- show password -->
+                                <!-- <svg class="input__toggle" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-eye-icon lucide-eye">
+                                    <path
+                                        d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg> -->
+
+                            </div>
+                        </div>
+                        <!-- remember me -->
+                        <div class="login__remember">
+                            <input type="checkbox" id="remember">
+                            <label class="input__label" for="remember">Remember Me</label>
+                        </div>
+                        <!-- submit -->
+                        <div class="login_submit">
+                            <button class="btn__primary" type="submit">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/js/login/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/style/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>TOFI</title>
+    <script>
+        if (!sessionStorage.getItem("auth") && !localStorage.getItem("auth")) {
+            window.location.replace("/index.html")
+        }
+    </script>
+</head>
+
+<body>
+    <div class="root">
+        <!-- start Aside -->
+        <aside class="aside">
+            <!-- start Aside toggle -->
+            <input type="checkbox" name="aside__toggle" id="aside__toggle">
+            <label class="aside__icon" for="aside__toggle" onclick="handleAside()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-circle-arrow-left-icon lucide-circle-arrow-left">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m12 8-4 4 4 4" />
+                    <path d="M16 12H8" />
+                </svg>
+            </label>
+            <!-- end Aside toggle -->
+            <div class="aside__content">
+                <nav class="aside__nav">
+                    <div>
+                        <a href="/dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-house-icon lucide-house">
+                                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            </svg>
+                            <span> Dashboard </span>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="active" href="/addpost.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-message-square-plus-icon lucide-message-square-plus">
+                                <path
+                                    d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
+                                <path d="M12 8v6" />
+                                <path d="M9 11h6" />
+                            </svg> <span>Add Post</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-message-square-text-icon lucide-message-square-text">
+                                <path
+                                    d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
+                                <path d="M7 11h10" />
+                                <path d="M7 15h6" />
+                                <path d="M7 7h8" />
+                            </svg>
+                            <span>Chat</span>
+                        </a>
+                    </div>
+
+                </nav>
+                <!-- start theme toggle -->
+                <div class="input theme">
+                    <div class="input__field">
+                        <input type="checkbox" onchange="handleTheme(event)" id="theme__toggle" class="input__control">
+                    </div>
+                    <label for="theme__toggle" class="input__label"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon">
+                            <path
+                                d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+                        </svg></label>
+                </div>
+                <!-- end theme toggle -->
+            </div>
+
+        </aside>
+        <!-- end Aside -->
+
+        <div class="container">
+            <header class="header">
+                <h3 class="logo">LOFI</h3>
+                <!-- start Logout button -->
+                <div>
+                    <button class="btn__primary" onclick="handleLogout()">
+                        Logout
+                    </button>
+                </div>
+                <!-- end Logout button -->
+            </header>
+
+            <section class="card">
+                <!-- start Add Post -->
+
+                <div class="addpost__col">
+                    <!-- post id -->
+                    <div class="input">
+                        <label for="id" class="input__label"> ID </label>
+                        <div class="input__field">
+                            <input type="number" id="id" class="input__control" name="id" placeholder="Enter post id">
+                        </div>
+                    </div>
+
+                    <!-- post title -->
+                    <div class="input">
+                        <label for="title" class="input__label"> Title <span class="error" id="titleError"> must exceed 3 letters </span> </label>
+                        <div class="input__field">
+                            <input type="text" id="title" class="input__control" name="title"
+                                placeholder="Enter post title">
+                        </div>
+                    </div>
+                </div>
+                <!-- post body -->
+                <div class="input">
+                    <label for="body" class="input__label"> Body <span class="error" id="bodyError">must exceed 10 letters
+                        </span> </label>
+                    <div class="input__field">
+                        <textarea type="text" id="body" class="input__control" name="body"
+                            placeholder="Enter post body"></textarea>
+                    </div>
+                </div>
+
+                <div class="addpost__error">
+                    You must fill all fields *
+                </div>
+
+                <!-- submit -->
+                <div class="wide_submit">
+                    <button class="btn__primary" onclick="handleAddPost()">
+                        Add post
+                    </button>
+                </div>
+                <!-- end Add Post -->
+            </section>
+        </div>
+
+    </div>
+    <script src="/js/dashboard/aside.js"></script>
+    <script src="/js/dashboard/addpost.js"></script>
+    <script src="/js/dashboard/logout.js"></script>
+</body>
+
+</html>

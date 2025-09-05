@@ -1,0 +1,68 @@
+/* ----- login page ----- */
+
+.login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.login__container{
+    position: relative;
+
+}
+
+.login__container .card {
+    padding: 2rem;
+}
+
+.login__container::after{
+    content: "";
+    background-image: url(../assets/images/points__shap.webp);
+    position: absolute;
+    bottom: -20%;
+    left: -20%;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+}
+.login__container::before{
+    content: "";
+    background-image: url(../assets/images/points__shap.webp);
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+}
+
+h3.logo {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.login__welcome{
+    margin-bottom: 1rem;
+}
+
+.login__welcome h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.login__welcome p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.login__remember{
+    display: flex;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding: 5px;
+}
+
+

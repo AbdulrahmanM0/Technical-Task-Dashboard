@@ -1,0 +1,28 @@
+
+:root {
+    --primary-color: #696cff;
+    --secondary-color: #f5f5f9;
+    --accent-color: #fff;
+    --danger: #f41515;
+
+    --text-primary: #384551;
+    --text-secondary: #646e78;
+    --text-third: #bdbdbd;
+
+
+    --b-shadow: 0 12px 18px rgb(0 0 0 / 4%);
+
+    --radius: 6px;
+
+    --p-spacing: 15px;
+
+    --trans: .3s;
+}
+
+[data-theme=dark]{
+    --secondary-color: #1e1e2f;
+    --accent-color: #2c2c3e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --b-shadow: 0 12px 18px rgb(0 0 0 / 40%);
+}

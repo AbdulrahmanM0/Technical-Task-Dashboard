@@ -1,0 +1,375 @@
+/* ---- start logo ---- */
+.logo {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* ---- end logo ---- */
+
+/* ---- start header ---- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--accent-color);
+    border-radius: var(--radius);
+    box-shadow: var(--b-shadow);
+    padding: var(--p-spacing);
+    margin-bottom: var(--p-spacing);
+}
+
+.header h3.logo {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* ---- end header ---- */
+
+/* ---- start aside ---- */
+.aside {
+    width: 200px;
+    background-color: var(--accent-color);
+    height: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: var(--b-shadow);
+    transition: var(--trans);
+    padding-top: 5rem;
+}
+
+.aside #aside__toggle {
+    display: none;
+}
+
+.aside #aside__toggle:checked+.aside__icon {
+    transform: rotate(180deg);
+}
+
+.aside__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.aside__icon {
+    position: absolute;
+    right: -10px;
+    top: 35px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: var(--trans);
+}
+
+.aside__icon:hover {
+    opacity: .8;
+}
+
+.aside__icon svg {
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+    border-radius: 50vw;
+    border: 5px solid var(--secondary-color);
+    width: 30px;
+    height: 30px;
+}
+
+.aside__nav {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.aside__nav>div {
+    width: 100%;
+    padding: 5px var(--p-spacing);
+}
+
+.aside__nav a {
+    display: inline-block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: .9rem;
+    border-radius: var(--radius);
+    color: var(--text-secondary);
+}
+
+.aside__nav a:hover {
+    opacity: .9;
+}
+
+.aside__nav a.active {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+.aside.close {
+    width: 70px;
+}
+
+@media (max-width: 700px) {
+    .aside {
+        width: 70px;
+    }
+
+    .aside__icon {
+        display: none;
+    }
+
+    .aside__nav a span {
+        display: none;
+    }
+
+}
+
+/* ---- end aside ---- */
+
+
+/* ---- start input ---- */
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+    
+}
+
+.input__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.input__field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input__control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--text-third);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--text-primary);
+        background-color: var(--accent-color);
+
+}
+
+.input__control:focus {
+    outline: none;
+    border-color: var(--text-primary);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.input__control[type="search"] {
+    padding-left: 40px;
+}
+
+.input__toggle {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+.input__error {
+    border: 1px solid var(--danger);
+}
+.input__search {
+    position: absolute;
+    left: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+.input.theme{
+    padding: var(--p-spacing);
+    
+}
+.input.theme input{
+    display: none;
+}
+
+
+/* ---- end input ---- */
+
+/* ---- start checkbox ---- */
+input[type="checkbox"] {
+    accent-color: var(--primary-color);
+    width: 1rem;
+    height: 1rem;
+    font-size: 5px;
+}
+
+input[type="checkbox"]:hover {
+    accent-color: var(--primary-color);
+}
+
+/* ---- end checkbox ---- */
+
+/* ---- start button ---- */
+.btn__primary {
+    background-color: var(--primary-color);
+    font-size: 1rem;
+    padding: .6rem;
+    border-radius: var(--radius);
+    color: var(--accent-color);
+    border: none;
+    box-shadow: var(--b-shadow);
+    cursor: pointer;
+    transition: var(--trans);
+    display: inline-block;
+}
+
+.btn__primary:hover {
+    opacity: 0.85;
+}
+
+.wide_submit button {
+    width: 100%;
+}
+
+/* ---- end button ---- */
+
+/* ---- start card ---- */
+.card {
+    background-color: var(--accent-color);
+    padding: var(--p-spacing);
+    box-shadow: var(--b-shadow);
+    border-radius: var(--radius);
+}
+
+/* ---- end card ---- */
+
+/* ---- start table ---- */
+.table__container{
+    overflow: auto;
+}
+table {
+    border: 1px solid var(--secondary-color);
+    width: 100%;
+    overflow-x: auto;
+}
+
+table tr td,
+th {
+    padding: var(--p-spacing);
+    border: 1px solid var(--secondary-color);
+    color: var(--text-primary);
+}
+
+table tr,table input{
+    font-size: .8rem;
+}
+
+table th h4 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+table th h4 svg {
+    width: 10px;
+    height: 10px;
+}
+
+table th h4 svg.upper {
+    transform: rotate(0);
+}
+
+table th h4 svg.lower {
+    transform: rotate(180deg);
+}
+
+table th h4:hover {
+    opacity: .7;
+}
+
+table th #id__col {}
+
+/* ---- end table ---- */
+
+/* ---- start spinner ---- */
+#spinner {
+    margin: auto;
+    display: block;
+    animation: spin 1s linear infinite;
+    transition: var(--trans);
+    /* display: none; */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---- end spinner ---- */
+
+/* ---- start pagination ---- */
+.pagination {
+    display: flex;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 12px;
+    justify-content: center;
+}
+
+.pagination__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: var(--b-shadow);
+    /* border: 1px solid var(--text-third); */
+    cursor: pointer;
+}
+
+.pagination__button.active {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    box-shadow: var(--b-shadow);
+}
+
+.pagination__button.inactive {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* ---- end pagination ---- */
+
+/* ---- start error ---- */
+.error {
+    color: var(--danger);
+    margin-left: auto;
+    width: auto;
+    float: right;
+    display: none;
+}
+
+/* ---- end error ---- */

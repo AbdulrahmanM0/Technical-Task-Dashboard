@@ -1,0 +1,23 @@
+@import url(./variables.css);
+@import url(./components.css);
+@import url(./login.css);
+@import url(./dashboard.css);
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondary-color);
+    font-family: "Inter", sans-serif;
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+}
+
