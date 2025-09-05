@@ -8,6 +8,7 @@ The project tasks are organized into separate files
 
 ## DATA STORE
 i have stored data in session storage only for useing .....
+beside ** dashboard data are catched once in storage to avoid any reload or lag
 
 ## styles folder 
 
